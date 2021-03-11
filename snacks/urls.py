@@ -1,9 +1,8 @@
 from django.urls import path
 from snacks.models import Snack
-from .views import SnackListView, SnackDetailView, SnackCreateView, SnackUpdateView, SnackDeleteView
+from snacks.views import SnackListView, SnackDetailView, SnackCreateView, SnackUpdateView, SnackDeleteView
 
 urlpatterns = [
-    # path('', HomePageView.as_view(), name = 'home'),
     path('', SnackListView.as_view(), name='snack_list'),
     path('<int:pk>/', SnackDetailView.as_view(), name='snack_detail'),
     path('create/', SnackCreateView.as_view(), name='snack_create'),
